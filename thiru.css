@@ -1,0 +1,37 @@
+*{
+	
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body{
+		display:flex;
+	justify-content:center;
+	align-items:center;
+	
+}
+.thiru-sec{
+	
+	width:80%;
+	padding:20px;
+	box-shadow:0px 0px 10px gray;
+	height:auto;
+	
+}
+.thi-img img{
+	width:100%;
+	height:auto;
+}
+.thiru-sec .btn{
+	
+	color:black;
+	background:gold;
+	padding:4px 20px;
+	font-size:18px;
+	border-radius:25px;
+	
+}
+.thiru-sec .btn:focus{
+	transition:0.5s;
+   box-shadow:none!important;
+}

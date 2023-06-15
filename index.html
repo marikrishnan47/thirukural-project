@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>thirukural-project</title> 
+		    <link rel="stylesheet" href="thiru.css"/>
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+			
+</head>
+	<body>
+	
+		<section class="thiru-sec my-5 ">
+            <div class="container">
+		 
+				<div class="row">
+				 	<div class="thi-img px-5 col-lg-4 col-sm-6">
+						<img src="img/download.png" class="mt-5"/>
+			        </div>
+					<div class=" col-lg-8 mt-4 col-sm-12 ">
+					<label for="valluvar" class="pe-2 fs-5">Find The Thaqirukural</label> 
+					<input type="text" id="valluvar"class=""> 
+					<button onclick='great()' class="btn my-4">Get Started</button>
+					<div id="next" class=" col-12"></div>
+					</div>
+					
+						
+				</div>
+		    </div>
+		</section>
+	
+	
+	
+	<script>
+	 async function great(){
+     let value= document.getElementById("valluvar").value
+	 
+	 const responce = await fetch(
+	 
+	 "https://api-thirukkural.vercel.app/api?num=" +value
+	 );
+	  
+	  let result = await responce.json();
+	  let finalResult="";
+	  for(let data of Object.keys(result) ){
+	  
+	  finalResult += data+" : "+result[data]+"</br>"
+	  
+	  }
+	    
+		document.getElementById("next").innerHTML=finalResult
+	 }
+	
+	</script>
+	
+	</body>
+</html>
