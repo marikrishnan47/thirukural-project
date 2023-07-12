@@ -19,8 +19,8 @@
 						<img src="img/download.png" class="mt-5"/>
 			        </div>
 					<div class=" col-lg-8 mt-4 col-sm-12 ">
-					<label for="valluvar" class="pe-2 fs-5">Find The Thaqirukural</label> 
-					<input type="text" id="valluvar"class=""> 
+					<label for="valluvar" class="pe-2 fs-5">Find The Thirukural</label> 
+					<input type="number" id="valluvar"class=""> 
 					<button onclick='great()' class="btn my-4">Get Started</button>
 					<div id="next" class=" col-12"></div>
 					</div>
@@ -35,23 +35,20 @@
 	<script>
 	 async function great(){
      let value= document.getElementById("valluvar").value
-	 
-	 const responce = await fetch(
-	 
+	 if(value<=0){
+           alert('above number 1')
+	 }
+	 const responce = await fetch( 
 	 "https://api-thirukkural.vercel.app/api?num=" +value
 	 );
-	  
+
 	  let result = await responce.json();
 	  let finalResult="";
 	  for(let data of Object.keys(result) ){
-	  
-	  finalResult += data+" : "+result[data]+"</br>"
-	  
+	     finalResult += data+" : "+result[data]+"</br>"
 	  }
-	    
 		document.getElementById("next").innerHTML=finalResult
 	 }
-	
 	</script>
 	
 	</body>
